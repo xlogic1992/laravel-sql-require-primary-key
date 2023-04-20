@@ -42,7 +42,9 @@ class RequirePrimaryKeyState
 
     public static function restore(?string $connection = null): void
     {
-        static::set(static::$originals[$connection], $connection);
+        if (isset(static::$originals[$connection]) === true) {
+            static::set(static::$originals[$connection], $connection);
+        }
     }
 
     public static function connectionRequiresPrimaryKey(?string $connection = null): bool

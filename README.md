@@ -7,7 +7,7 @@ MySQL server that enforces primary keys (DigitalOcean Managed Databases for exam
 
 This issue occurs because the `sql_require_primary_key` flag in MySQL prevents the creation
 of tables without a primary key. Because of the way Laravel's Schema builder assigns primary
-keys to non-serial columns, he schema builder will first create the table without a primary
+keys to non-serial columns, the schema builder will first create the table without a primary
 key, then immediately alter the table to assign a primary key.
 
 ### Example
